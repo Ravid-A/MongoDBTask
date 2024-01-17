@@ -31,7 +31,19 @@ const updateBooksQuantity = async (items, books) => {
 };
 
 const create = async (order) => {
-  const { items } = order;
+  const items = [];
+
+  if (!order.items) {
+    //Case of 1 item
+    const item = {
+      book: order.book,
+      amount: order.amount,
+    };
+
+    items.push(item);
+  } else {
+    items = order.items;
+  }
 
   const books = await Book.find({
     _id: { $in: items.map((item) => item.book) },
