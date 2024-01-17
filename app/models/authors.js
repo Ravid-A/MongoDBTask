@@ -7,6 +7,6 @@ const authorSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Author = model("Author", authorSchema);
+const Author = model("Authors", authorSchema);
 
 module.exports = Author;

@@ -5,7 +5,7 @@ const bookSchema = new Schema({
   title: String,
   publishingYear: Number,
   genres: [String],
-  authors: [{ type: Schema.Types.ObjectId, ref: "Author" }],
+  authors: [{ type: Schema.Types.ObjectId, ref: "Authors" }],
   quantity: Number,
   price: Number,
   createdAt: { type: Date, default: Date.now },
